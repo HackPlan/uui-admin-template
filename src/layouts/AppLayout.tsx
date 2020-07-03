@@ -4,7 +4,10 @@ import { Logo } from '../partials/Logo';
 import { Navigation } from '../partials/Navigation';
 import { Icons } from '../icons';
 
-function AppLayout() {
+export interface AppLayoutProps {
+  children: React.ReactNode
+}
+function AppLayout(props: AppLayoutProps) {
   return (
     <Layout>
       <Layout.Sider className="shadow-sm" style={{ backgroundColor: '#E7EBEE', width: 200 }}>
@@ -15,54 +18,7 @@ function AppLayout() {
         <Layout>
           <Layout.TopBar className="bg-white shadow-sm"></Layout.TopBar>
           <Layout.Content>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
-            <div>page content</div>
+            <div>{props.children}</div>
             <footer className="my-12">
               <div className="flex flex-row justify-center items-center">
                 <a className="w-64 text-right" href="https://template.uui.cool">UUI Template</a>

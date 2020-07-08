@@ -1,11 +1,13 @@
 import React from 'react';
-import { Route, RouteProps, Redirect } from 'react-router-dom';
+import { Redirect, Route, RouteProps } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { store } from '../store';
 
 export const PublicRoute = Route;
 
 export const AuthenticatedRoute = (props: RouteProps) => {
-  // TODO: implement authenticated check
-  if (false) {
+  const isLogin = useRecoilValue(store.isLogin)
+  if (!isLogin) {
     return (
       <Redirect
         to={{
@@ -15,7 +17,6 @@ export const AuthenticatedRoute = (props: RouteProps) => {
       />
     )
   }
-
   return (
     <Route {...props} />
   )

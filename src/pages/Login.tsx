@@ -1,11 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Button } from '@hackplan/uui';
 import { useInject } from '../hooks/useInject';
 import { AuthApi } from '../api/AuthApi';
+import { useRecoilState } from 'recoil';
+import { store } from '../store';
+import useRouter from '../hooks/useRouter';
 
 export function Login() {
+  const { history } = useRouter()
+
   const [username, setUsername] = useState('uui-template')
   const [password, setPassword] = useState('password')
+
+  const [auth, setAuth] = useRecoilState(store.Auth)
+  useEffect(() => {
+    if (auth && auth.token && auth.user) {
+      history.push('/')
+    }
+  }, [auth, history])
 
   const authApi = useInject(AuthApi)
 
@@ -24,7 +36,7 @@ export function Login() {
           </div>
           <Button className="w-full mt-4" onClick={async () => {
             const data = await authApi.login({ username, password })
-            console.log(data)
+            setAuth(data)
           }}>Login</Button>
         </div>
       </div>

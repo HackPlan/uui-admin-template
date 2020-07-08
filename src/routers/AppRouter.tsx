@@ -1,27 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import AppLayout from '../layouts/AppLayout';
-import { PublicRoute, AuthenticatedRoute } from './Routes';
-import { Home } from '../pages/Home';
-import { Login } from '../pages/Login';
+import { routes } from '../route.config';
 
 export function AppRouter() {
   return (
     <Router>
       <Switch>
-        <PublicRoute path="/login">
-          <Login />
-        </PublicRoute>
-        <AuthenticatedRoute path="/form">
-          <AppLayout>
-            <div>form</div>
-          </AppLayout>
-        </AuthenticatedRoute>
-        <AuthenticatedRoute path="/">
-          <AppLayout>
-            <Home />
-          </AppLayout>
-        </AuthenticatedRoute>
+        {routes.map((i) => {
+          return (
+            <i.route key={i.key} path={i.path}>
+              <i.layout>
+                {i.content}
+              </i.layout>
+            </i.route>
+          )
+        })}
       </Switch>
     </Router>
   );

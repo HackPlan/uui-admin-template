@@ -1,5 +1,6 @@
 @import './styles/uui.css';
 @import './styles/tailwindcss.css';
+@import './styles/app.css';
 
 body {
   margin: 0;

@@ -1,18 +1,25 @@
-import { atom, selector } from 'recoil';
+import { atom } from 'recoil';
 import { UserAuth } from '../types/User';
 
 const Auth = atom<UserAuth | null>({
   key: 'Auth',
   default: null,
 })
-const isLogin = selector<boolean>({
-  key: 'isLogin',
-  get: ({ get }) => {
-    const auth = get(Auth)
-    return !!auth && !!auth.user && !!auth.token
+
+const NavigationSettings = atom<{
+  selectedKey: string | null;
+  expanded: {
+    [key: string]: boolean;
+  };
+}>({
+  key: 'NavigationSettings',
+  default: {
+    selectedKey: 'home',
+    expanded: {},
   }
 })
 
 export const store = {
-  Auth, isLogin,
+  Auth,
+  NavigationSettings,
 }

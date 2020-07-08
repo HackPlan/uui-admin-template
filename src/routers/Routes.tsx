@@ -1,13 +1,13 @@
 import React from 'react';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { store } from '../store';
 
 export const PublicRoute = Route;
 
 export const AuthenticatedRoute = (props: RouteProps) => {
-  const isLogin = useRecoilValue(store.isLogin)
-  if (!isLogin) {
+  const [auth] = useRecoilState(store.Auth)
+  if (!auth) {
     return (
       <Redirect
         to={{

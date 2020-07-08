@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      <RecoilContainer persistStates={[store.Auth]}>
+      <RecoilContainer persistPrefix={'UUI-Template'} persistStates={[store.Auth]}>
         <AppRouter />
       </RecoilContainer>
     </div>

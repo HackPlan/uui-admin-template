@@ -5,7 +5,7 @@ import { Navigation } from '../partials/Navigation';
 import { Icons } from '../icons';
 
 export interface AppLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 function AppLayout(props: AppLayoutProps) {
   return (

@@ -3,13 +3,13 @@ import { Icons } from '../../icons';
 import classNames from 'classnames';
 
 export interface MenuProps {
-  icon?: React.ReactNode
-  title: string
+  icon?: React.ReactNode;
+  title: string;
 
-  onClick?: () => void
+  onClick?: () => void;
 
   subMenu?: boolean;
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 export function Menu(props: MenuProps) {
 
@@ -40,7 +40,7 @@ export function Menu(props: MenuProps) {
 }
 
 export interface SubMenuProps {
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 export function SubMenu(props: SubMenuProps) {
   return (

@@ -4,12 +4,13 @@ import { Home } from './pages/Home';
 import { PublicRoute, AuthenticatedRoute } from './routers/Routes';
 import MainLayout from './layouts/MainLayout';
 import FullPageLayout from './layouts/FullPageLayout';
+import { FormBasic } from './pages/FormBasic';
 
 export interface Route {
   key: string;
   path: string;
   route: typeof PublicRoute | typeof AuthenticatedRoute;
-  layout: React.FunctionComponent<any>;
+  layout: typeof MainLayout | typeof FullPageLayout;
   content: React.ReactNode;
 }
 
@@ -29,5 +30,12 @@ export const routes: Route[] = [
     layout: MainLayout,
     route: AuthenticatedRoute,
     content: <Home />,
-  }
+  },
+  {
+    key: 'formBasic',
+    path: '/form/basic',
+    layout: MainLayout,
+    route: AuthenticatedRoute,
+    content: <FormBasic />,
+  },
 ]

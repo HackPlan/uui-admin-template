@@ -26,11 +26,6 @@ export const navigations: Navigation[] = [
         label: '基础表单',
         path: '/form/basic',
       },
-      {
-        key: 'formAdvanced',
-        label: '分步表单',
-        path: '/form/advanced',
-      }
     ]
   },
   {

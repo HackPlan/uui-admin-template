@@ -7,6 +7,7 @@ export interface Navigation {
   path?: string;
   icon?: React.ReactNode;
   subs?: Navigation[];
+  hiden?: boolean;
 }
 
 export const navigations: Navigation[] = [
@@ -43,6 +44,28 @@ export const navigations: Navigation[] = [
         label: '高级列表',
         path: '/list/advanced',
       }
+    ]
+  },
+  {
+    key: 'error',
+    label: '异常页',
+    icon: <Icons.Alertcircle />,
+    subs: [
+      {
+        key: 'errorForbidden',
+        label: '403',
+        path: '/error/403',
+      },
+      {
+        key: 'errorNotFound',
+        label: '403',
+        path: '/error/404',
+      },
+      {
+        key: 'errorServerError',
+        label: '500',
+        path: '/error/500',
+      },
     ]
   },
 ]

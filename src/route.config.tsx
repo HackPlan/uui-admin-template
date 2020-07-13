@@ -7,6 +7,9 @@ import FullPageLayout from './layouts/FullPageLayout';
 import { FormBasic } from './pages/FormBasic';
 import { Icons } from './icons';
 import { RouterBreadcrumbRoutes } from './hooks/useRouterBreadcrumb';
+import { NotFound } from './pages/NotFound';
+import { Forbidden } from './pages/Forbidden';
+import { ServerError } from './pages/ServerError';
 
 export interface Route {
   key: string;
@@ -15,6 +18,7 @@ export interface Route {
   layout: typeof MainLayout | typeof FullPageLayout;
   content: React.ReactNode;
   breadcrumb?: React.ComponentType | React.ElementType | string;
+  hideBreadcrumb?: boolean;
 }
 
 export const routes: Route[] = [
@@ -22,7 +26,7 @@ export const routes: Route[] = [
    * Public Routes
    */
   {
-    key: 'login',
+    key: 'Login',
     path: '/login',
     route: PublicRoute,
     layout: FullPageLayout,
@@ -33,7 +37,7 @@ export const routes: Route[] = [
    * Private Authenticated Routes
    */
   {
-    key: 'home',
+    key: 'Home',
     path: '/',
     layout: MainLayout,
     route: AuthenticatedRoute,
@@ -46,12 +50,51 @@ export const routes: Route[] = [
     ),
   },
   {
-    key: 'formBasic',
+    key: 'FormBasic',
     path: '/form/basic',
     layout: MainLayout,
     route: AuthenticatedRoute,
     content: <FormBasic />,
     breadcrumb: '基础表单',
+  },
+  {
+    key: 'Forbidden',
+    path: '/error/403',
+    layout: MainLayout,
+    route: PublicRoute,
+    content: <Forbidden />,
+    breadcrumb: '403',
+    hideBreadcrumb: true,
+  },
+  {
+    key: 'NotFound',
+    path: '/error/404',
+    layout: MainLayout,
+    route: PublicRoute,
+    content: <NotFound />,
+    breadcrumb: '404',
+    hideBreadcrumb: true,
+  },
+  {
+    key: 'ServerError',
+    path: '/error/500',
+    layout: MainLayout,
+    route: PublicRoute,
+    content: <ServerError />,
+    breadcrumb: '500',
+    hideBreadcrumb: true,
+  },
+  /**
+   * Default Route
+   */
+  {
+    key: 'PageNotFound',
+    path: '/404',
+    layout: MainLayout,
+    route: PublicRoute,
+    content: <NotFound />,
+    breadcrumb: '404',
+    hideBreadcrumb: true,
   },
 ]
 
@@ -59,6 +102,6 @@ export const routesForBreadcrumb: RouterBreadcrumbRoutes[] = routes.map((i) => {
   return {
     path: i.path,
     breadcrumb: i.breadcrumb,
+    hideBreadcrumb: i.hideBreadcrumb,
   }
 })
-console.log({routesForBreadcrumb})

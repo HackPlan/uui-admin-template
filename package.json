@@ -25,7 +25,8 @@
     "react-scripts": "3.4.1",
     "recoil": "^0.0.10",
     "reflect-metadata": "^0.1.13",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.6",
+    "use-react-router-breadcrumbs": "^1.0.4"
   },
   "scripts": {
     "start": "craco start",

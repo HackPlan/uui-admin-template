@@ -20,7 +20,7 @@ export function AppRouter() {
                 <Switch>
                   {items.map((i) => {
                     return (
-                      <i.route key={i.key} path={i.path} exact >
+                      <i.route key={i.key} path={i.path} exact>
                         {i.content}
                       </i.route>
                     )

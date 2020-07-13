@@ -6,7 +6,7 @@ export interface PageProps {
 
 export function Page(props: PageProps) {
   return (
-    <div className="m-8">
+    <div>
       {props.children}
     </div>
   )

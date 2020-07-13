@@ -1,15 +1,15 @@
-import React from 'react';
 import { Layout } from '@hackplan/uui';
+import React from 'react';
+import { AppBreadcrumb } from '../partials/AppBreadcrumb';
+import { Footer } from '../partials/Footer';
 import { Logo } from '../partials/Logo';
 import { Navigation } from '../partials/Navigation/Navigation';
 import { ToolBar } from '../partials/ToolBar/ToolBar';
-import { Footer } from '../partials/Footer';
 
 export interface MainLayoutProps {
   children: React.ReactNode;
 }
 function MainLayout(props: MainLayoutProps) {
-
   return (
     <Layout>
       <Layout.Sider className="shadow-sm" style={{ backgroundColor: '#E7EBEE', width: 200 }}>
@@ -22,8 +22,11 @@ function MainLayout(props: MainLayoutProps) {
             <ToolBar />
           </Layout.TopBar>
           <Layout.Content>
-            {props.children}
-            <Footer />
+            <div className="mx-16 my-8">
+              <AppBreadcrumb />
+              {props.children}
+              <Footer />
+            </div>
           </Layout.Content>
         </Layout>
       </Layout.Content>

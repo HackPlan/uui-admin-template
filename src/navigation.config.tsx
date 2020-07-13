@@ -30,20 +30,20 @@ export const navigations: Navigation[] = [
     ]
   },
   {
-    key: 'list',
-    label: '列表页',
+    key: 'table',
+    label: '表格页',
     icon: <Icons.List />,
     subs: [
       {
-        key: 'listBasic',
-        label: '基础列表',
-        path: '/list/basic',
+        key: 'tableBasic',
+        label: '基础表格',
+        path: '/table/basic',
       },
       {
-        key: 'listAdvanced',
-        label: '高级列表',
-        path: '/list/advanced',
-      }
+        key: 'tableAdvanced',
+        label: '高级表格',
+        path: '/table/advanced',
+      },
     ]
   },
   {

@@ -10,6 +10,8 @@ import { RouterBreadcrumbRoutes } from './hooks/useRouterBreadcrumb';
 import { NotFound } from './pages/error/NotFound';
 import { Forbidden } from './pages/error/Forbidden';
 import { ServerError } from './pages/error/ServerError';
+import { TableBasic } from './pages/table/TableBasic';
+import { TableAdvanced } from './pages/table/TableAdvanced';
 
 export interface Route {
   key: string;
@@ -49,6 +51,7 @@ export const routes: Route[] = [
       </div>
     ),
   },
+  // Form
   {
     key: 'FormBasic',
     path: '/form/basic',
@@ -56,6 +59,23 @@ export const routes: Route[] = [
     route: AuthenticatedRoute,
     content: <FormBasic />,
     breadcrumb: '基础表单',
+  },
+  // Table
+  {
+    key: 'TableBasic',
+    path: '/table/basic',
+    layout: MainLayout,
+    route: AuthenticatedRoute,
+    content: <TableBasic />,
+    breadcrumb: '基础表格',
+  },
+  {
+    key: 'TableAdvanced',
+    path: '/table/advanced',
+    layout: MainLayout,
+    route: AuthenticatedRoute,
+    content: <TableAdvanced />,
+    breadcrumb: '高级表格',
   },
   {
     key: 'Forbidden',

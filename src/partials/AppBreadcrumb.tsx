@@ -14,7 +14,7 @@ export function AppBreadcrumb(props: AppBreadcrumbProps) {
 
   if (activeRoute && activeRoute.hideBreadcrumb) return null
   return (
-    <Breadcrumb className="mb-2" items={items} activeItem={''} />
+    <Breadcrumb className="mb-2" items={items} />
   )
 }
 

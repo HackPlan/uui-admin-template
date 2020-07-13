@@ -4,12 +4,12 @@ import { Home } from './pages/Home';
 import { PublicRoute, AuthenticatedRoute } from './routers/Routes';
 import MainLayout from './layouts/MainLayout';
 import FullPageLayout from './layouts/FullPageLayout';
-import { FormBasic } from './pages/FormBasic';
+import { FormBasic } from './pages/form/FormBasic';
 import { Icons } from './icons';
 import { RouterBreadcrumbRoutes } from './hooks/useRouterBreadcrumb';
-import { NotFound } from './pages/NotFound';
-import { Forbidden } from './pages/Forbidden';
-import { ServerError } from './pages/ServerError';
+import { NotFound } from './pages/error/NotFound';
+import { Forbidden } from './pages/error/Forbidden';
+import { ServerError } from './pages/error/ServerError';
 
 export interface Route {
   key: string;

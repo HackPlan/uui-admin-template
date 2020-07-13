@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Card } from '../components/Card';
-import { Page } from '../components/Page';
+import { Card } from '../../components/Card';
+import { Page } from '../../components/Page';
 import { RadioGroup, TextField, TextArea, Radio, DatePicker, HTMLSelect, Checkbox, Button } from '@hackplan/uui';
 
 export function FormBasic() {

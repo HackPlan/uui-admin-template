@@ -1,7 +1,7 @@
 import React from 'react';
-import { Page } from '../components/Page';
+import { Page } from '../../components/Page';
 import { Button } from '@hackplan/uui';
-import useRouter from '../hooks/useRouter';
+import useRouter from '../../hooks/useRouter';
 
 export function ServerError() {
   const router = useRouter()

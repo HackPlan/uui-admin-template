@@ -10,7 +10,7 @@ export function TableAdvanced() {
 
   const [name, setName] = useState('')
   const [gender, setGender] = useState<'男' | '女' | null>(null)
-  const [selectedIndexes, setSelectedIndexes] = useState<number[]>([])
+  const [selectedRowIds, setSelectedRowIds] = useState<string[]>([])
 
   const [pagination, setPagination] = useState({
     offset: 0,
@@ -36,30 +36,23 @@ export function TableAdvanced() {
 
   useEffect(() => {
     getUserList()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pagination.offset])
 
-  const columns: TableColumn[] = [
-    { title: '姓名' },
-    { title: '性别' },
-    { title: '年龄' },
-    { title: '省份' },
-    { title: '城市' },
-    { title: '网站' },
-    { title: '操作' },
-  ]
-  const rows = users.map((i: any) => {
-    return [
-      i.name,
-      i.gender,
-      i.age,
-      i.province,
-      i.city,
-      i.website,
+  const columns: TableColumn<any>[] = [
+    { key: 'name', title: '姓名' },
+    { key: 'gender', title: '性别' },
+    { key: 'age', title: '年龄' },
+    { key: 'province', title: '省份' },
+    { key: 'city', title: '城市' },
+    { key: 'website', title: '网站' },
+    { key: 'actions', title: '操作', onRowRender: () => (
       <div key="action">
-        <Button>编辑信息</Button>
+        <Button styling={{ type: 'primary' }}>编辑信息</Button>
       </div>
-    ]
-  })
+    ) },
+  ]
+  const onRowId = (row: any) => row.id
 
   return (
     <Page>
@@ -81,17 +74,18 @@ export function TableAdvanced() {
             />
           </LabeledControl>
           <div className="ml-4">
-            <Button onClick={() => { getUserList() }}>查询</Button>
+            <Button styling={{ type: 'primary' }} onClick={() => { getUserList() }}>查询</Button>
           </div>
         </div>
       </Card>
       <Card>
         <Table
           columns={columns}
-          rows={rows}
-          selectedIndexes={selectedIndexes}
+          rows={users}
+          onRowId={onRowId}
+          selectedRowIds={selectedRowIds}
           onSelected={(value) => {
-            setSelectedIndexes(value)
+            setSelectedRowIds(value)
           }}
         ></Table>
         <div className="mt-4 flex flex-row justify-end">

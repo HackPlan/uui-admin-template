@@ -34,7 +34,7 @@ export function Login() {
             <label>Password</label>
             <TextField type='password' value={password} onChange={(value) => setPassword(value)}></TextField>
           </div>
-          <Button className="w-full mt-4" onClick={async () => {
+          <Button styling={{ type: 'primary' }} className="w-full mt-4" onClick={async () => {
             const data = await authApi.login({ username, password })
             setAuth(data)
           }}>Login</Button>

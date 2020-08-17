@@ -78,7 +78,7 @@ export function FormBasic() {
         </LabeledControl>
         <LabeledControl>
           <Label></Label>
-          <Button>提交</Button>
+          <Button styling={{ type: 'primary' }}>提交</Button>
         </LabeledControl>
       </Card>
     </Page>

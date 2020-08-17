@@ -9,6 +9,7 @@ const userListCount = 123
 const userListData = Mock.mock({
   rows: range(1, userListCount).map(() => {
     return Mock.mock({
+      id: Mock.Random.id(),
       name: Mock.Random.cname(),
       gender: ['男', '女'][random(0, 1)],
       age: Mock.Random.integer(12, 65),

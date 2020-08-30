@@ -1125,10 +1125,10 @@
     postcss "7.0.32"
     purgecss "^2.3.0"
 
-"@hackplan/uui@^0.4.8":
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/@hackplan/uui/-/uui-0.4.8.tgz#e38dbc76588cf0502244f436b81c90e832799d7b"
-  integrity sha512-bIZfqvLVJHxxrUyeqMAxjUP4d4acfDGWbFp4Osh48joVkN8l4utK8toK5tn/d1AG6tHRfKlJG/YGQ0ijj5E7hg==
+"@hackplan/uui@^0.4.12":
+  version "0.4.12"
+  resolved "https://registry.yarnpkg.com/@hackplan/uui/-/uui-0.4.12.tgz#c91aa4d122d181e6d6bbdad4b5a81e045388495e"
+  integrity sha512-mpk8KpIWOYG8F2kQUvHFO7hYIQuW9V5C6hen9ma30LrwP9D05Ye1nzbhS3EZaOTBwBBx8AUZ73ucF1ntTZS5vg==
   dependencies:
     "@charlietango/use-focus-trap" "^1.2.6"
     "@popperjs/core" "^2.4.2"

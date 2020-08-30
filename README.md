@@ -1,44 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# UUI Admin Template
 
-## Available Scripts
+![](https://img.shields.io/github/package-json/dependency-version/HackPlan/uui-admin-template/@hackplan/uui)
+![](https://img.shields.io/github/contributors/HackPlan/uui-admin-template)
+![](https://img.shields.io/github/issues-pr-raw/HackPlan/uui-admin-template)
+![](https://img.shields.io/github/issues-raw/HackPlan/uui-admin-template)
+![](https://img.shields.io/github/license/HackPlan/uui-admin-template)
 
-In the project directory, you can run:
+English | [简体中文](https://github.com/HackPlan/uui-admin-template/blob/master/docs/README.zh-CN.md)
 
-### `yarn start`
+## Introduction
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`uui-admin-template` is a React boilerplate for admin applications, it is based on React and uses the UI library [UUI](https://github.com/HackPlan/UUI). The purpose of developing and open source this template project: On the one hand, you can look through the code of this template project to understand how to use UUI correctly; on the other hand, you can manually fork a copy of this project or directly use the `Use this Template` button to quickly create a startup project.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+> This is a admin template boilerplate project and will not be released to NPM as a general library, so when you decide to use it and commit it to your business project as a code base, in theory, subsequent updates of uui-admin-template will require you manually migrate to your own project. This project is not a fool-proof one. It requires a certain front-end development knowledge and ability. We strongly recommend that you are familiar with every line of code in this project and read all the documents.
 
-### `yarn test`
+## Getting started
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone https://github.com/HackPlan/uui-admin-template.git
+cd uui-admin-template
+yarn
+yarn start
 
-### `yarn build`
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This will automatically open http://localhost:3000
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+yarn build
+```
 
-### `yarn eject`
+## Licenses
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+All files on the UUI GitHub repository are subject to the MIT license. Please read the License file at the root of the project.

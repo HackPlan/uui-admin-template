@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card } from '../../components/Card';
 import { Page } from '../../components/Page';
 
-export function TableBasic() {
+export default function TableBasic() {
 
   const [data] = useState([
     { id: '1', title: '新小科技招聘会', type: '线下活动', time: '2020-03-13 13:00', location: '苏州市姑苏区' },

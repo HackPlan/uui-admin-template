@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { routes } from '../route.config';
 import { groupBy } from 'lodash';
@@ -21,7 +21,9 @@ export function AppRouter() {
                   {items.map((i) => {
                     return (
                       <i.route key={i.key} path={i.path} exact>
-                        {i.content}
+                        <Suspense fallback={<div />}>
+                          {i.content}
+                        </Suspense>
                       </i.route>
                     )
                   })}

@@ -6,7 +6,7 @@ import { useRecoilState } from 'recoil';
 import { store } from '../store';
 import useRouter from '../hooks/useRouter';
 
-export function Login() {
+export default function Login() {
   const { history } = useRouter()
 
   const [username, setUsername] = useState('uui-template')

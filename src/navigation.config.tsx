@@ -58,7 +58,7 @@ export const navigations: Navigation[] = [
       },
       {
         key: 'errorNotFound',
-        label: '403',
+        label: '404',
         path: '/error/404',
       },
       {

@@ -3,7 +3,7 @@ import { Page } from '../../components/Page';
 import { Button } from '@hackplan/uui';
 import useRouter from '../../hooks/useRouter';
 
-export function Forbidden() {
+export default function Forbidden() {
   const router = useRouter()
   return (
     <Page>

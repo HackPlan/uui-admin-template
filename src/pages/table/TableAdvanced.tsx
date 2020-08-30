@@ -6,7 +6,7 @@ import { useInject } from '../../hooks/useInject';
 import { DataApi } from '../../api/DataApi';
 import { omit } from 'lodash';
 
-export function TableAdvanced() {
+export default function TableAdvanced() {
 
   const [name, setName] = useState('')
   const [gender, setGender] = useState<'男' | '女' | null>(null)

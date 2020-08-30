@@ -1,17 +1,18 @@
 import React from 'react';
-import { Login } from './pages/Login';
-import { Home } from './pages/Home';
 import { PublicRoute, AuthenticatedRoute } from './routers/Routes';
 import MainLayout from './layouts/MainLayout';
 import FullPageLayout from './layouts/FullPageLayout';
 import { FormBasic } from './pages/form/FormBasic';
 import { Icons } from './icons';
 import { RouterBreadcrumbRoutes } from './hooks/useRouterBreadcrumb';
-import { NotFound } from './pages/error/NotFound';
-import { Forbidden } from './pages/error/Forbidden';
-import { ServerError } from './pages/error/ServerError';
-import { TableBasic } from './pages/table/TableBasic';
-import { TableAdvanced } from './pages/table/TableAdvanced';
+
+const Login = React.lazy(() => import('./pages/Login'))
+const Home = React.lazy(() => import('./pages/Home'))
+const NotFound = React.lazy(() => import('./pages/error/NotFound'))
+const Forbidden = React.lazy(() => import('./pages/error/Forbidden'));
+const ServerError = React.lazy(() => import('./pages/error/ServerError'));
+const TableBasic = React.lazy(() => import('./pages/table/TableBasic'));
+const TableAdvanced = React.lazy(() => import('./pages/table/TableAdvanced'));
 
 export interface Route {
   key: string;

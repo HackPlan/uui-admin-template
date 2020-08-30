@@ -1,10 +1,8 @@
-import { injectable, inject } from "inversify";
-import { HttpService } from "../services/HttpService";
+import { injectable } from "inversify";
+import { BaseApi } from "./BaseApi";
 
 @injectable()
-export class DataApi {
-
-  @inject(HttpService.name) httpService!: HttpService
+export class DataApi extends BaseApi {
 
   async userList(query?: { name?: string; gender?: string; offset?: number; limit?: number }) {
     const { data } = await this.httpService.axios.get('http://localhost:12345/userList', { params: query })

@@ -1,8 +1,8 @@
 import React from 'react';
-import { User } from "../types/User";
+import { UserAuthUser } from '../types/Auth';
 
 export interface PersonaProps {
-  user: User;
+  user: UserAuthUser;
 }
 
 export function Persona(props: PersonaProps) {

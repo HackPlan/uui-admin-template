@@ -1,16 +1,13 @@
 import React from 'react';
-import { useRecoilState } from 'recoil';
 import { Persona } from '../../components/Persona';
-import { store } from '../../store';
 import { ToolBarItem } from './ToolBarItem';
+import { useStore } from '../../hooks/useStore';
 
 export interface ToolBarProps {
 }
 
-export function ToolBar(props: ToolBarProps) {
-
-
-  const [auth, setAuth] = useRecoilState(store.Auth)
+export function ToolBar() {
+  const { auth } = useStore()
 
   return (
     <div className="h-full box-border px-4 flex flex-row items-center justify-between">
@@ -25,7 +22,7 @@ export function ToolBar(props: ToolBarProps) {
           menus={[{
             label: '退出登录',
             onAction: () => {
-              setAuth(null)
+              auth.logout()
               return true
             }
           }]}

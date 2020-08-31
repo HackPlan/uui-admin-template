@@ -1,16 +1,15 @@
 import React from 'react';
 import './App.css';
 import { AppRouter } from './routers/AppRouter';
-import { store } from './store';
-import { RecoilContainer } from './store/RecoilContainer';
+import { StoreProvider } from './contexts/MobxStoreContext';
 
 function App() {
 
   return (
     <div className="App">
-      <RecoilContainer persistPrefix={'UUI-Template'} persistStates={[store.Auth]}>
+      <StoreProvider>
         <AppRouter />
-      </RecoilContainer>
+      </StoreProvider>
     </div>
   );
 }

@@ -1,13 +1,14 @@
 import React from 'react';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
-import { store } from '../store';
+import { useStore } from '../hooks/useStore';
+import { observer } from 'mobx-react-lite';
 
-export const PublicRoute = Route;
+export const PublicRoute = Route
 
-export const AuthenticatedRoute = (props: RouteProps) => {
-  const [auth] = useRecoilState(store.Auth)
-  if (!auth) {
+export const AuthenticatedRoute = observer((props: RouteProps) => {
+  const { auth } = useStore()
+
+  if (!auth.token) {
     return (
       <Redirect
         to={{
@@ -17,7 +18,8 @@ export const AuthenticatedRoute = (props: RouteProps) => {
       />
     )
   }
+
   return (
     <Route {...props} />
   )
-}
+})

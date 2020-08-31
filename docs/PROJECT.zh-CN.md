@@ -116,10 +116,10 @@ uui-admin-template
 
 ## 功能
 
-* [鉴权]([AUTH.zh-CN.md](https://github.com/HackPlan/uui-admin-template/blob/master/docs/AUTH.zh-CN.md))
-* [路由]([ROUTE.zh-CN.md](https://github.com/HackPlan/uui-admin-template/blob/master/docs/ROUTE.zh-CN.md))
-* [导航栏]([NAVIGATION.zh-CN.md](https://github.com/HackPlan/uui-admin-template/blob/master/docs/NAVIGATION.zh-CN.md))
-* [布局]([LAYOUT.zh-CN.md](https://github.com/HackPlan/uui-admin-template/blob/master/docs/LAYOUT.zh-CN.md))
-* [接口 & Mock]([API_AND_MOCK.zh-CN.md](https://github.com/HackPlan/uui-admin-template/blob/master/docs/API_AND_MOCK.zh-CN.md))
-* [图标]([ICON.zh-CN.md](https://github.com/HackPlan/uui-admin-template/blob/master/docs/ICON.zh-CN.md))
+* [鉴权](https://github.com/HackPlan/uui-admin-template/blob/master/docs/AUTH.zh-CN.md)
+* [路由](https://github.com/HackPlan/uui-admin-template/blob/master/docs/ROUTE.zh-CN.md)
+* [导航栏](https://github.com/HackPlan/uui-admin-template/blob/master/docs/NAVIGATION.zh-CN.md)
+* [布局](https://github.com/HackPlan/uui-admin-template/blob/master/docs/LAYOUT.zh-CN.md)
+* [接口 & Mock](https://github.com/HackPlan/uui-admin-template/blob/master/docs/API_AND_MOCK.zh-CN.md)
+* [图标](https://github.com/HackPlan/uui-admin-template/blob/master/docs/ICON.zh-CN.md)
 

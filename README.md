@@ -14,6 +14,17 @@ English | [简体中文](https://github.com/HackPlan/uui-admin-template/blob/mas
 
 > This is a admin template boilerplate project and will not be released to NPM as a general library, so when you decide to use it and commit it to your business project as a code base, in theory, subsequent updates of uui-admin-template will require you manually migrate to your own project. This project is not a fool-proof one. It requires a certain front-end development knowledge and ability. We strongly recommend that you are familiar with every line of code in this project and read all the documents.
 
+## Features
+
+* [Project Intro](https://github.com/HackPlan/uui-admin-template/blob/master/docs/PROJECT.zh-CN.md)
+* [Auth](https://github.com/HackPlan/uui-admin-template/blob/master/docs/AUTH.zh-CN.md)
+* [Route](https://github.com/HackPlan/uui-admin-template/blob/master/docs/ROUTE.zh-CN.md)
+* [Navigation](https://github.com/HackPlan/uui-admin-template/blob/master/docs/NAVIGATION.zh-CN.md)
+* [Layout](https://github.com/HackPlan/uui-admin-template/blob/master/docs/LAYOUT.zh-CN.md)
+* [API & Mock](https://github.com/HackPlan/uui-admin-template/blob/master/docs/API_AND_MOCK.zh-CN.md)
+* [Icon](https://github.com/HackPlan/uui-admin-template/blob/master/docs/ICON.zh-CN.md)
+
+
 ## Getting started
 
 ```bash

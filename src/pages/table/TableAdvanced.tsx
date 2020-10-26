@@ -9,7 +9,7 @@ import { omit } from 'lodash';
 export default function TableAdvanced() {
 
   const [name, setName] = useState('')
-  const [gender, setGender] = useState<'男' | '女' | null>(null)
+  const [gender, setGender] = useState<string | null>(null)
   const [selectedRowIds, setSelectedRowIds] = useState<string[]>([])
 
   const [pagination, setPagination] = useState({
@@ -68,8 +68,8 @@ export default function TableAdvanced() {
               value={gender}
               onChange={(value) => { setGender(value) }}
               options={[
-                { label: '男', value: '男' },
-                { label: '女', value: '女' },
+                { key: '男', label: '男', value: '男' },
+                { key: '女', label: '女', value: '女' },
               ]}
             />
           </LabeledControl>

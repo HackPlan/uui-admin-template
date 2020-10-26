@@ -12,24 +12,24 @@ export interface MainLayoutProps {
 function MainLayout(props: MainLayoutProps) {
   return (
     <Layout>
-      <Layout.Sider className="shadow-sm" style={{ backgroundColor: '#E7EBEE', width: 200 }}>
+      <Layout.Nav className="shadow-sm" style={{ backgroundColor: '#E7EBEE', width: 200 }}>
         <Logo />
         <Navigation />
-      </Layout.Sider>
-      <Layout.Content style={{ backgroundColor: '#F9FAFB' }}>
+      </Layout.Nav>
+      <Layout.Main style={{ backgroundColor: '#F9FAFB' }}>
         <Layout>
-          <Layout.TopBar className="bg-white shadow-sm">
+          <Layout.Header className="bg-white shadow-sm">
             <ToolBar />
-          </Layout.TopBar>
-          <Layout.Content>
+          </Layout.Header>
+          <Layout.Main>
             <div className="mx-16 my-8">
               <AppBreadcrumb />
               {props.children}
               <Footer />
             </div>
-          </Layout.Content>
+          </Layout.Main>
         </Layout>
-      </Layout.Content>
+      </Layout.Main>
     </Layout>
   );
 }

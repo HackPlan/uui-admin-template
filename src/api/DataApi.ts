@@ -1,11 +1,12 @@
-import { injectable } from "inversify";
-import { BaseApi } from "./BaseApi";
+import { inject, injectable } from "inversify";
+import { UserBasedHttpService } from "./base/UserBasedHttpService";
 
 @injectable()
-export class DataApi extends BaseApi {
+export class DataApi {
+  @inject(UserBasedHttpService) userBasedHttpService!: UserBasedHttpService
 
   async userList(query?: { name?: string; gender?: string; offset?: number; limit?: number }) {
-    const { data } = await this.httpService.axios.get('http://localhost:12345/userList', { params: query })
+    const { data } = await this.userBasedHttpService.axios.get('http://localhost:12345/userList', { params: query })
     return data
   }
 }

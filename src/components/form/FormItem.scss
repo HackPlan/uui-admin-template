@@ -1,0 +1,33 @@
+.TSWeb-FormItem-Root {
+  margin-bottom: 0.25rem;
+
+  .TSWeb-FormItem-Label {
+    &.required:after {
+      content:" *";
+      color: red;
+    }
+  }
+  .TSWeb-FormItem-Content {
+    margin-top: 0.25rem;
+  }
+  .TSWeb-FormItem-Error {
+    color: red;
+    font-size: 0.5rem;
+    line-height: 1;
+    margin-top: 0.25rem;
+  }
+
+  .UUI-TextField-Root,
+  .UUI-NumberField-Root,
+  .UUI-TextArea-Root,
+  .UUI-DatePicker-Root,
+  .UUI-Select-Root,
+  .UUI-HTMLSelect-Root {
+    &.error {
+      border-color: red;
+    }
+    &.error:focus-within {
+      box-shadow: #ffd9d9 0 0 0 3px;
+    }
+  }
+}

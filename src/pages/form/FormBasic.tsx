@@ -1,101 +1,113 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card } from '../../components/Card';
 import { Page } from '../../components/Page';
-import { RadioGroup, TextField, TextArea, Radio, DatePicker, HTMLSelect, Checkbox, Button } from '@hackplan/uui';
+import { Button } from '@hackplan/uui';
+import { Field, Form, Formik } from 'formik';
+import { FormItem } from '../../components/form/FormItem';
+import { FormikUUIDatePicker, FormikUUIHTMLSelect, FormikUUIRadioGroup, FormikUUITextField } from '../../components/form/formik';
+import * as Yup from 'yup';
+import { FormikUUICheckboxGroup } from '../../components/form/formik/uui/FormikUUICheckboxGroup';
 
 export function FormBasic() {
-
-  const [name, setName] = useState('')
-  const [introduction, setIntroduction] = useState('')
-  const [gender, setGender] = useState('male')
-  const [birthday, setBirthday] = useState<Date | null>(null)
-  const [school, setSchool] = useState('北京大学')
-  const [skillsWeb, setSkillsWeb] = useState(false)
-  const [skillsMobile, setSkillsMobile] = useState(false)
-  const [skillsServer, setSkillsServer] = useState(false)
-  const [skillsAI, setSkillsAI] = useState(false)
-
 
   return (
     <Page>
       <Card>
-        <LabeledControl>
-          <Label>名字</Label>
-          <TextField className="w-64" value={name} onChange={(value) => setName(value)} />
-        </LabeledControl>
-        <LabeledControl>
-          <Label>介绍</Label>
-          <TextArea className="w-64" value={introduction} onChange={(value) => setIntroduction(value)} />
-        </LabeledControl>
-        <LabeledControl>
-          <Label>性别</Label>
-          <RadioGroup name="gender" value={gender} onChange={(value) => { setGender(value) }}>
-            <Radio label={'男'} value={'male'} className={"mr-2"}></Radio>
-            <Radio label={'女'} value={'female'} className={"mr-2"}></Radio>
-            <Radio label={'其他'} value={'other'} className={"mr-2"}></Radio>
-          </RadioGroup>
-        </LabeledControl>
-        <LabeledControl>
-          <Label>生日</Label>
-          <DatePicker className="w-64" value={birthday} onChange={(value) => setBirthday(value)} />
-        </LabeledControl>
-        <LabeledControl>
-          <Label>学校</Label>
-          <HTMLSelect
-            className="w-64"
-            options={[
-              { label: '北京大学', value: '北京大学' },
-              { label: '重庆大学', value: '重庆大学' },
-            ]}
-            value={school}
-            onChange={(value) => setSchool(value)}
-          />
-        </LabeledControl>
-        <LabeledControl>
-          <Label>技能</Label>
-          <div className="flex flex-col">
-            <Checkbox
-              label={'网页'}
-              checked={skillsWeb}
-              onChange={(value) => { setSkillsWeb(value) }}
-            />
-            <Checkbox
-              label={'移动端'}
-              checked={skillsMobile}
-              onChange={(value) => { setSkillsMobile(value) }}
-            />
-            <Checkbox
-              label={'服务端'}
-              checked={skillsServer}
-              onChange={(value) => { setSkillsServer(value) }}
-            />
-            <Checkbox
-              label={'AI'}
-              checked={skillsAI}
-              onChange={(value) => { setSkillsAI(value) }}
-            />
-          </div>
-        </LabeledControl>
-        <LabeledControl>
-          <Label></Label>
-          <Button styling={{ type: 'primary' }}>提交</Button>
-        </LabeledControl>
+        <Formik
+          initialValues={{
+            name: '',
+            introduction: '',
+            gender: 'male',
+            birthday: '',
+            school: '北京大学',
+            skills: [] as string[],
+          }}
+          validationSchema={Yup.object().shape({
+            name: Yup.string()
+              .min(1, '输入不得短于1个字')
+              .max(16 , '输入不得多于4个字')
+              .required('该字段是必填项'),
+            introduction: Yup.string()
+              .min(1, '输入不得短于1个字')
+              .max(128, '输入不得多于128个字')
+              .required('该字段是必填项'),
+            birthday: Yup.date()
+              .max(new Date(), '日期应该早于当前时间')
+              .required('该字段是必填项'),
+            skills: Yup.array().of(Yup.string())
+              .min(1, '至少选择一个技能')
+              .required('该字段是必填项'),
+          })}
+          onSubmit={(values) => {
+            alert(JSON.stringify(values, null, 2))
+            console.log(values)
+          }}
+        >
+          {({ errors, handleSubmit }) => {
+            return (
+              <Form onSubmit={handleSubmit}>
+                <FormItem label={"名字"} labelFor="name" error={errors.name}>
+                  <Field
+                    name="name"
+                    component={FormikUUITextField}
+                    className="w-64"
+                  />
+                </FormItem>
+                <FormItem label={"介绍"} labelFor="introduction" error={errors.introduction}>
+                  <Field
+                    name="introduction"
+                    component={FormikUUITextField}
+                    className="w-64"
+                  />
+                </FormItem>
+                <FormItem label={"性别"} labelFor="gender" error={errors.gender}>
+                  <Field
+                    name="gender"
+                    component={FormikUUIRadioGroup}
+                    options={[
+                      { label: '男', value: 'male', className: "mr-2" },
+                      { label: '女', value: 'female', className: "mr-2" },
+                      { label: '其他', value: 'other', className: "mr-2" },
+                    ]}
+                  />
+                </FormItem>
+                <FormItem label={"生日"} labelFor="birthday" error={errors.birthday}>
+                  <Field
+                    name="birthday"
+                    className="w-64"
+                    component={FormikUUIDatePicker}
+                  />
+                </FormItem>
+                <FormItem label={"学校"} labelFor="school" error={errors.school}>
+                  <Field
+                    name="school"
+                    className="w-64"
+                    component={FormikUUIHTMLSelect}
+                    options={[
+                      { label: '北京大学', value: '北京大学' },
+                      { label: '重庆大学', value: '重庆大学' },
+                    ]}
+                  />
+                </FormItem>
+                <FormItem label={"技能"} labelFor="skills" error={errors.skills}>
+                  <Field
+                    name="skills"
+                    className="w-64"
+                    component={FormikUUICheckboxGroup}
+                    options={[
+                      { label: '网页', value: 'web' },
+                      { label: '移动端', value: 'mobile' },
+                      { label: '服务端', value: 'server' },
+                      { label: '人工智能', value: 'ai' },
+                    ]}
+                  />
+                </FormItem>
+                <Button type="submit" styling={{ type: 'primary' }}>提交</Button>
+              </Form>
+            )
+          }}
+        </Formik>
       </Card>
     </Page>
-  )
-}
-
-const LabeledControl = (props: any) => {
-  return (
-    <div className="flex row mb-4">
-      {props.children}
-    </div>
-  )
-}
-const Label = (props: any) => {
-  return (
-    <label className="flex justify-end items-center mr-2 w-24 h-8">
-      {props.children}
-    </label>
   )
 }

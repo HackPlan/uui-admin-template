@@ -7,6 +7,8 @@ export {
   FormikUUIDatePicker,
   FormikUUISelect,
   FormikUUIHTMLSelect,
+  FormikUUISlider,
+  FormikUUIStepper,
 } from './FormikUUIUniversal';
 export {
   FormikUUIRadioGroup,

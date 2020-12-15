@@ -5,6 +5,9 @@ import { withFormikUUIField } from "./withFormikUUIField"
 export interface CheckboxGroupProps {
   value: string[];
   onChange: (value: string[]) => void;
+
+  onFocus?: React.FocusEventHandler<HTMLLabelElement>;
+  onBlur?: React.FocusEventHandler<HTMLLabelElement>;
 }
 
 function FormikUUICheckboxGroupWrapper(props: CheckboxGroupProps & { options: CheckboxProps[] }) {
@@ -28,6 +31,8 @@ function FormikUUICheckboxGroupWrapper(props: CheckboxGroupProps & { options: Ch
               const newValue = Array.from(newValueSet)
               props.onChange(newValue)
             }}
+            onFocus={props.onFocus}
+            onBlur={props.onBlur}
           />
         )
       })}

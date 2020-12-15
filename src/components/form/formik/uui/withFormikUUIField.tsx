@@ -24,6 +24,10 @@ export function withFormikUUIField<P>(WrappedUUIFormComponent: React.ComponentTy
         id={field.name}
         checked={field.value}
         value={field.value}
+        onBlur={() => {
+          form.setFieldTouched(field.name, true);
+          props.onBlurAfter && props.onBlurAfter()
+        }}
         onChange={(value: any) => {
           form.setFieldValue(field.name, value);
           props.onChangeAfter && props.onChangeAfter(value)

@@ -2,7 +2,6 @@ import React from 'react';
 import { PublicRoute, AuthenticatedRoute } from './routers/Routes';
 import MainLayout from './layouts/MainLayout';
 import FullPageLayout from './layouts/FullPageLayout';
-import { FormBasic } from './pages/form/FormBasic';
 import { Icons } from './icons';
 import { RouterBreadcrumbRoutes } from './hooks/useRouterBreadcrumb';
 
@@ -13,6 +12,8 @@ const Forbidden = React.lazy(() => import('./pages/error/Forbidden'));
 const ServerError = React.lazy(() => import('./pages/error/ServerError'));
 const TableBasic = React.lazy(() => import('./pages/table/TableBasic'));
 const TableAdvanced = React.lazy(() => import('./pages/table/TableAdvanced'));
+const FormBasic = React.lazy(() => import('./pages/form/FormBasic'));
+const FormAutoGenerator = React.lazy(() => import('./pages/form/FormAutoGenerator'));
 
 export interface Route {
   key: string;
@@ -60,6 +61,14 @@ export const routes: Route[] = [
     route: AuthenticatedRoute,
     content: <FormBasic />,
     breadcrumb: '基础表单',
+  },
+  {
+    key: 'FormGenerator',
+    path: '/form/generator',
+    layout: MainLayout,
+    route: AuthenticatedRoute,
+    content: <FormAutoGenerator />,
+    breadcrumb: '自动生成表单',
   },
   // Table
   {

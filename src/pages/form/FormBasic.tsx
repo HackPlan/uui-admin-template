@@ -8,7 +8,7 @@ import { FormikUUIDatePicker, FormikUUIHTMLSelect, FormikUUIRadioGroup, FormikUU
 import * as Yup from 'yup';
 import { FormikUUICheckboxGroup } from '../../components/form/formik/uui/FormikUUICheckboxGroup';
 
-export function FormBasic() {
+export default function FormBasic() {
 
   return (
     <Page>

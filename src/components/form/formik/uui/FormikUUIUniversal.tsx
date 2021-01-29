@@ -1,5 +1,4 @@
-import { Checkbox, TextField, NumberField, TextArea, DatePicker, Select, HTMLSelect, Slider, Stepper } from "@hackplan/uui"
-import { Switch } from "react-router-dom"
+import { Checkbox, TextField, NumberField, TextArea, DatePicker, Select, HTMLSelect, Slider, Stepper, Switch } from "@hackplan/uui"
 import { withFormikUUIField } from "./withFormikUUIField"
 
 export const FormikUUISwitch = withFormikUUIField(Switch)

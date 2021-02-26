@@ -18,7 +18,7 @@ export function FormBasic() {
             name: '',
             introduction: '',
             gender: 'male',
-            birthday: '',
+            birthday: null,
             school: '北京大学',
             skills: [] as string[],
             certCount: 0,

@@ -1127,12 +1127,13 @@
     postcss "7.0.32"
     purgecss "^2.3.0"
 
-"@hackplan/uui@^0.5.11":
-  version "0.5.11"
-  resolved "https://registry.yarnpkg.com/@hackplan/uui/-/uui-0.5.11.tgz#8f2490e54fe242a88fba54b8d3b9885eb1a33f84"
-  integrity sha512-OxT9RKxCsx5kQinAE0qucqCXM1afvzluZSd4FjF9OsYqdMzfLmxDUTlr30Pu2essY2oxTUWVUtXVlkL/Uwq+ag==
+"@hackplan/uui@^0.6.5":
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/@hackplan/uui/-/uui-0.6.5.tgz#1bcc7c21aa3b8b3a85dfe401988d6c5f070e7c7e"
+  integrity sha512-AJ/20pqWhcqgKpu3qASmXk5ghtUFKf8tX0cZ024v3QHGjq5F0LgDrmuq9Z+FwrHoRxGk2Yf/3Vi9eji0dKJb1g==
   dependencies:
     "@popperjs/core" "^2.5.4"
+    prop-types "^15.7.2"
     react-popper "^2.2.3"
 
 "@hapi/address@2.x.x":
